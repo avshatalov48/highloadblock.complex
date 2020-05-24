@@ -40,7 +40,7 @@ try {
     $iHlBlockId = (int)$arCurrentValues['BLOCK_ID'];
 
     if (sizeof($arListHL) === 1) {
-        $iHlBlockId = array_keys($arListHL)[0];
+        $iHlBlockId = reset(array_keys($arListHL));
     }
 
     if ($iHlBlockId > 0) {
@@ -52,7 +52,7 @@ try {
         }
     }
 } catch (\Exception $e) {
-    ShowError($e);
+    ShowError($e->getMessage());
     return;
 }
 
